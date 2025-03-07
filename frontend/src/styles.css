@@ -1,0 +1,512 @@
+/* CSS Variables for theming */
+:root {
+  /* Light theme (default) */
+  --background-color: #f5f7fa;
+  --card-background: white;
+  --text-color: #333;
+  --text-secondary: #2c3e50;
+  --text-muted: #7f8c8d;
+  --text-light: #95a5a6;
+  --accent-color: #3498db;
+  --accent-hover: #2980b9;
+  --border-color: #eee;
+  --form-background: #f8f9fa;
+  --button-secondary-bg: #ecf0f1;
+  --button-secondary-color: #34495e;
+  --button-secondary-hover: #dde4e6;
+  --table-header-bg: #f8f9fa;
+  --table-hover-bg: #f8f9fa;
+  --error-bg: #fdedec;
+  --error-color: #c0392b;
+  --error-border: #e74c3c;
+  --user-avatar-bg: #e3f2fd;
+  --user-avatar-color: #2196f3;
+  --badge-user-bg: #e3f2fd;
+  --badge-user-color: #2196f3;
+  --badge-admin-bg: #fce7f3;
+  --badge-admin-color: #db2777;
+  --box-shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* Dark theme */
+.dark-theme {
+  --background-color: #121212;
+  --card-background: #1e1e1e;
+  --text-color: #e0e0e0;
+  --text-secondary: #b0b0b0;
+  --text-muted: #909090;
+  --text-light: #707070;
+  --accent-color: #2196f3;
+  --accent-hover: #0d8bf2;
+  --border-color: #333;
+  --form-background: #2c2c2c;
+  --button-secondary-bg: #383838;
+  --button-secondary-color: #e0e0e0;
+  --button-secondary-hover: #444444;
+  --table-header-bg: #2c2c2c;
+  --table-hover-bg: #282828;
+  --error-bg: #422;
+  --error-color: #ff6b6b;
+  --error-border: #e74c3c;
+  --user-avatar-bg: #1a365d;
+  --user-avatar-color: #90cdf4;
+  --badge-user-bg: #1a365d;
+  --badge-user-color: #90cdf4;
+  --badge-admin-bg: #4a2b46;
+  --badge-admin-color: #fbcfe8;
+  --box-shadow: rgba(0, 0, 0, 0.3);
+}
+
+/* Base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Container layout */
+.app-container {
+  min-height: 100vh;
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.app-card {
+  background-color: var(--card-background);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px var(--box-shadow);
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  transition: background-color 0.3s;
+}
+
+/* App header with theme toggle */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+/* Theme toggle button */
+.theme-toggle-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-toggle-button:hover {
+  background-color: var(--button-secondary-bg);
+}
+
+/* Typography */
+.app-title {
+  font-size: 1.8rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.title-underline {
+  height: 3px;
+  width: 60px;
+  background-color: var(--accent-color);
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+/* Sections */
+.section {
+  margin-bottom: 2rem;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* Form elements */
+.user-form {
+  background-color: var(--form-background);
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  transition: background-color 0.3s;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.form-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.text-input,
+.select-input {
+  width: 100%;
+  padding: 0.65rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 0.95rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background-color: var(--card-background);
+  color: var(--text-color);
+}
+
+.text-input:focus,
+.select-input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+.text-input:disabled,
+.select-input:disabled {
+  background-color: var(--form-background);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.search-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.search-input {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 0.9rem;
+  transition: border-color 0.2s;
+  width: 200px;
+  background-color: var(--card-background);
+  color: var(--text-color);
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+.filter-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.filter-select {
+  width: auto;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+}
+
+/* Buttons */
+.button-primary {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.65rem 1.2rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.button-primary:hover {
+  background-color: var(--accent-hover);
+}
+
+.button-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.button-secondary {
+  background-color: var(--button-secondary-bg);
+  color: var(--button-secondary-color);
+  border: none;
+  border-radius: 4px;
+  padding: 0.65rem 1.2rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.button-secondary:hover {
+  background-color: var(--button-secondary-hover);
+}
+
+.button-secondary:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.button-search {
+  background-color: var(--button-secondary-bg);
+  color: var(--button-secondary-color);
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.button-search:hover {
+  background-color: var(--button-secondary-hover);
+}
+
+.button-icon {
+  background: none;
+  border: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0.4rem 0.6rem;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.button-edit {
+  color: var(--accent-color);
+}
+
+.button-edit:hover {
+  background-color: rgba(52, 152, 219, 0.1);
+}
+
+.button-delete {
+  color: var(--error-border);
+}
+
+.button-delete:hover {
+  background-color: rgba(231, 76, 60, 0.1);
+}
+
+/* Table styling */
+.table-container {
+  overflow-x: auto;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.users-table th,
+.users-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.users-table th {
+  background-color: var(--table-header-bg);
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.sortable-header {
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+}
+
+.sortable-header:hover {
+  background-color: var(--button-secondary-bg);
+}
+
+.users-table tr:last-child td {
+  border-bottom: none;
+}
+
+.users-table tr:hover {
+  background-color: var(--table-hover-bg);
+}
+
+.table-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+/* User elements */
+.user-name {
+  display: flex;
+  align-items: center;
+}
+
+.user-avatar {
+  height: 32px;
+  width: 32px;
+  background-color: var(--user-avatar-bg);
+  color: var(--user-avatar-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  margin-right: 0.75rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.badge-admin {
+  background-color: var(--badge-admin-bg);
+  color: var(--badge-admin-color);
+}
+
+.badge-user {
+  background-color: var(--badge-user-bg);
+  color: var(--badge-user-color);
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.pagination-info {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.button-pagination {
+  background-color: var(--button-secondary-bg);
+  color: var(--button-secondary-color);
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.button-pagination:hover {
+  background-color: var(--button-secondary-hover);
+}
+
+.button-pagination:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.page-size-select {
+  width: auto;
+  padding: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+/* Messages */
+.error-message {
+  background-color: var(--error-bg);
+  color: var(--error-color);
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+  border-left: 3px solid var(--error-border);
+}
+
+.empty-message {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.loader {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: var(--text-muted);
+}
+
+/* Footer */
+.app-footer {
+  text-align: center;
+  margin-top: 2rem;
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .app-container {
+    padding: 1rem;
+  }
+  
+  .app-card {
+    padding: 1.5rem;
+  }
+  
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .search-container {
+    width: 100%;
+  }
+  
+  .search-input {
+    flex-grow: 1;
+    width: auto;
+  }
+  
+  .filter-container {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .filter-select {
+    flex-grow: 1;
+  }
+}
